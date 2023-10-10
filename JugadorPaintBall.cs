@@ -15,9 +15,11 @@ namespace Paint_Bool
         public JugadorPaintBall(string nombre, uint edad, bool _activo, int _balas) : base(nombre, edad)
         {
 
-            this.activo = _activo; 
-            this.balas = _balas;    
+            this.activo = _activo;
+            this.balas = _balas;
         }
+        
+        //t              
         public override void correr()
         {
             base.velocidad += 5;
@@ -39,57 +41,79 @@ namespace Paint_Bool
             }
 
         }
+
         public void disparar(JugadorPaintBall jugadorenemigo)
         {
-            if (this.balas>0)
+            if (this.balas > 0)
             {
-                if(esquiva(this.evasividad, numr()))
+                int _balasDisparadas = balasDisparadas();
+                if(balas >= _balasDisparadas )
                 {
-                    
+                    balas -= _balasDisparadas;
+                }
+                else
+                {
+                    _balasDisparadas = balas;
+                    balas -= _balasDisparadas;
+                }
+
+                Console.WriteLine($"Has disparado {_balasDisparadas} balas");
+
+
+                switch (jugadorenemigo.evasividad)
+                {
+
+                    case 1:
+                        // 25 %
+                        if (numr() == 1 || numr() == 2 || numr() == 3)
+                        {
+                            jugadorenemigo.activo = false;
+                        }
+
+                        else
+                        {
+                        }
+                        break;
+                    case 2:
+
+                        // 50%
+                        if (numr() == 1 || numr() == 2)
+                        {
+                            jugadorenemigo.activo = false;
+                        }
+
+                        else
+                        {
+                        }
+                        break;
+                    case 3:
+                        // 75 %
+                        if (numr() == 1)
+                        {
+                            jugadorenemigo.activo = false;
+                        }
+
+                        else
+                        {   
+                        }
+                        break;
                 }
             }
             else
             {
-              this.activo=false;
+                this.activo = false;
             }
 
         }
-        static int numr()
+         int numr()
         {
             Random rnd = new Random();
             return rnd.Next(1, 4);
         }
-        bool esquiva(int evacividad, int ramdon)
+        int balasDisparadas()
         {
-            switch (evacividad)
-            {
-                // 25 %
-                case 1: 
-                    if (ramdon >= 1 && ramdon <= 3)
-                    {
-                        return true;
-                    }
-                    else return false;
-                       // 50% 
-                    case 2:
-                    if (ramdon >= 1 && ramdon <= 2)
-                    {
-                        return true;
-                    }
-
-                    else return false;
-
-                case 3:
-                    if (ramdon ==1 )
-                    {
-                        return true;
-                    }
-                    else return false;
-
-                    default : return false;
-            }
-
+            Random balas = new Random();
+            return balas.Next(1,10);
         }
-
     }
 }
