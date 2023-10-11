@@ -44,7 +44,7 @@ namespace Paint_Bool
 
         public void disparar(JugadorPaintBall jugadorenemigo)
         {
-            if (this.balas > 0)
+            if (this.balas > 0&& this.activo)
             {
                 int _balasDisparadas = balasDisparadas();
                 if(balas >= _balasDisparadas )
@@ -57,7 +57,7 @@ namespace Paint_Bool
                     balas -= _balasDisparadas;
                 }
 
-                Console.WriteLine($"Has disparado {_balasDisparadas} balas");
+                Console.WriteLine($"{this.nombre} ha disparado {_balasDisparadas} balas a {jugadorenemigo.nombre}");
 
 
                 switch (jugadorenemigo.evasividad)
@@ -68,6 +68,7 @@ namespace Paint_Bool
                         if (numr() == 1 || numr() == 2 || numr() == 3)
                         {
                             jugadorenemigo.activo = false;
+                            Console.WriteLine("Le ha dado");
                         }
 
                         else
@@ -80,6 +81,7 @@ namespace Paint_Bool
                         if (numr() == 1 || numr() == 2)
                         {
                             jugadorenemigo.activo = false;
+                            Console.WriteLine("Le ha dado");
                         }
 
                         else
@@ -91,6 +93,7 @@ namespace Paint_Bool
                         if (numr() == 1)
                         {
                             jugadorenemigo.activo = false;
+                            Console.WriteLine("Le ha dado");
                         }
 
                         else
@@ -108,7 +111,7 @@ namespace Paint_Bool
          int numr()
         {
             Random rnd = new Random();
-            return rnd.Next(1, 4);
+            return rnd.Next(1, 10);
         }
         int balasDisparadas()
         {

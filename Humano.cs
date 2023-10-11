@@ -8,7 +8,7 @@ namespace Paint_Bool
 {
     internal class Humano
     {
-        protected string nombre { get; set; }
+        public string nombre { get; set; }
         protected uint edad {get; set; }
         protected uint velocidad {get; set; }
         
