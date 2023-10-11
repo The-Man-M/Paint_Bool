@@ -22,7 +22,7 @@
             CampoDeBatalla campo = new CampoDeBatalla(equipo_1, equipo_2);
             campo.ComenzarBatalla();
             campo.HayGanador();
-            Console.WriteLine("hola");
+        
             Console.ReadKey();
 
         }
