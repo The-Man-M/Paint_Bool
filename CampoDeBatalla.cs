@@ -40,14 +40,20 @@ namespace Paint_Bool
                 {
                     pareja.Jugador1.correr();
                     pareja.Jugador2.correr();
-                    pareja.Jugador1.disparar(pareja.Jugador2);
-                    pareja.Jugador2.disparar(pareja.Jugador1);
+                    if(ramd()%2==0)
+                    {
+                        pareja.Jugador1.disparar(pareja.Jugador2);
+                        pareja.Jugador2.disparar(pareja.Jugador1);
+                    }
+                    else
+                    {
+                        pareja.Jugador2.disparar(pareja.Jugador1);
+                        pareja.Jugador1.disparar(pareja.Jugador2);
+                    }
+                    
 
-                    Console.WriteLine($"{pareja.Jugador1.nombre} esta activo?\n {pareja.Jugador1.activo}");
-                    Console.WriteLine($"{pareja.Jugador2.nombre} esta activo?\n {pareja.Jugador2.activo}");
-
-                }
-                Console.WriteLine("sexo");
+                } 
+                
             }
             TerminarBatalla();
         }
@@ -82,6 +88,11 @@ namespace Paint_Bool
 
             return false;
         }
+        int ramd()
+    {
+       Random random = new Random();
+            return random.Next(1,100);
+    }
 
     }
 }

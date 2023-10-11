@@ -41,7 +41,7 @@ namespace Paint_Bool
             }
 
         }
-
+ 
         public void disparar(JugadorPaintBall jugadorenemigo)
         {
             if (this.balas > 0&& this.activo)
@@ -57,7 +57,7 @@ namespace Paint_Bool
                     balas -= _balasDisparadas;
                 }
 
-                Console.WriteLine($"{this.nombre} ha disparado {_balasDisparadas} balas a {jugadorenemigo.nombre}");
+                Console.WriteLine($"{this.nombre} ha disparado {_balasDisparadas} balas a {jugadorenemigo.nombre}\n");
 
 
                 switch (jugadorenemigo.evasividad)
@@ -70,10 +70,6 @@ namespace Paint_Bool
                             jugadorenemigo.activo = false;
                             Console.WriteLine("Le ha dado");
                         }
-
-                        else
-                        {
-                        }
                         break;
                     case 2:
 
@@ -83,10 +79,6 @@ namespace Paint_Bool
                             jugadorenemigo.activo = false;
                             Console.WriteLine("Le ha dado");
                         }
-
-                        else
-                        {
-                        }
                         break;
                     case 3:
                         // 75 %
@@ -95,15 +87,13 @@ namespace Paint_Bool
                             jugadorenemigo.activo = false;
                             Console.WriteLine("Le ha dado");
                         }
-
-                        else
-                        {   
-                        }
                         break;
                 }
+                Console.WriteLine();
             }
             else
             {
+            //    Console.WriteLine("esta descalificado\n");
                 this.activo = false;
             }
 
@@ -111,7 +101,7 @@ namespace Paint_Bool
          int numr()
         {
             Random rnd = new Random();
-            return rnd.Next(1, 10);
+            return rnd.Next(1, 4);
         }
         int balasDisparadas()
         {
