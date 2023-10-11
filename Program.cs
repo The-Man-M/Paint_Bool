@@ -18,7 +18,7 @@
                 new JugadorPaintBall("Nombre3", 22, true, 50),
             };
 
-
+            
             CampoDeBatalla campo = new CampoDeBatalla(equipo_1, equipo_2);
             campo.ComenzarBatalla();
 

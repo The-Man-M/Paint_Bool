@@ -1,0 +1,14 @@
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\bin\Debug\net6.0\Paint_Bool.exe
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\bin\Debug\net6.0\Paint_Bool.deps.json
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\bin\Debug\net6.0\Paint_Bool.runtimeconfig.json
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\bin\Debug\net6.0\Paint_Bool.dll
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\bin\Debug\net6.0\Paint_Bool.pdb
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.AssemblyInfoInputs.cache
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.AssemblyInfo.cs
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.csproj.CoreCompileInputs.cache
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.dll
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\refint\Paint_Bool.dll
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.pdb
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\Paint_Bool.genruntimeconfig.cache
+C:\Users\Carlo\OneDrive\Documentos\GitHub\Paint_Bool\obj\Debug\net6.0\ref\Paint_Bool.dll
