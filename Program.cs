@@ -39,23 +39,23 @@ namespace Paint_Bool
 
                 if (Console.ReadLine() == "SI")
                 {
-                    Console.Clear();
+                    Console.Clear();nombredeljuago() ;
                     int _balas = balas();
-                    Console.Clear();
+                    Console.Clear();nombredeljuago() ;
                     _equipo_1 = equipo(1);
-                    Console.Clear();
+                    Console.Clear();nombredeljuago() ;
                     _equipo_2 = equipo(2);
                     Console.Clear();
 
                     equipo_1.Clear();
                     equipo_2.Clear();
                     for (int i = 0; i < 3; i++)
-                    {
+                    {nombredeljuago() ;
                         equipo_1.Add(new JugadorPaintBall(nombre(i + 1, _equipo_1), _equipo_1, edad(), true, _balas));
                         Console.Clear();
                     }
                     for (int i = 0; i < 3; i++)
-                    {
+                    {nombredeljuago() ;
                         equipo_2.Add(new JugadorPaintBall(nombre(i + 1, _equipo_2), _equipo_1, edad(), true, _balas));
                         Console.Clear();
                     }
@@ -67,6 +67,7 @@ namespace Paint_Bool
 
                 Console.ReadKey();
                 Console.Clear();
+nombredeljuago() ;
                 Console.WriteLine("Ingrese exactamente \"Si\" para salir, de lo contrario presione \"Enter\"");
               
             } while (Console.ReadLine() != "Si");
@@ -114,6 +115,21 @@ namespace Paint_Bool
                 return numero > 0;
             }
         }
+         void nombredeljuago() 
+         { 
+             Console.Clear(); 
+             Console.WriteLine("  _______________________________________________________________________________"); 
+             Console.WriteLine("||_______________________________________________________________________________||"); 
+             Console.WriteLine("||                                                                               ||"); 
+             Console.WriteLine("|| * * *    * * *   * * *   *     *   * * * * *   * *      * * *   *       *     ||"); 
+             Console.WriteLine("|| *   *    *   *     *     * *   *       *       *   *    *   *   *       *     ||"); 
+             Console.WriteLine("|| * * *    * * *     *     *  *  *       *       * *      * * *   *       *     ||"); 
+             Console.WriteLine("|| *        *   *     *     *   * *       *       *   *    *   *   *       *     ||"); 
+             Console.WriteLine("|| *        *   *   * * *   *     *       *       * *      *   *   * * *   * * * ||"); 
+             Console.WriteLine("||_______________________________________________________________________________||"); 
+             Console.WriteLine("||_______________________________________________________________________________||\n\n"); 
+             
+         }
     }
 
 }
