@@ -10,15 +10,17 @@ namespace Paint_Bool
     {
         CampoDeBatalla campo;
         public bool activo;
+      public  string equipo;
         int balas;
         int evasividad = 0;
-        public JugadorPaintBall(string nombre, uint edad, bool _activo, int _balas) : base(nombre, edad)
-        {
 
+        public JugadorPaintBall(string nombre, string equipo, uint edad, bool _activo, int _balas) : base(nombre, edad)
+        {
             this.activo = _activo;
             this.balas = _balas;
+            this.equipo = equipo;
         }
-        
+
         //t              
         public override void correr()
         {
@@ -41,64 +43,68 @@ namespace Paint_Bool
             }
 
         }
- 
+
         public void disparar(JugadorPaintBall jugadorenemigo)
         {
-            if (this.balas > 0&& this.activo)
+            if (this.activo)
             {
-                int _balasDisparadas = balasDisparadas();
-                if(balas >= _balasDisparadas )
+
+                if (this.balas > 0)
                 {
-                    balas -= _balasDisparadas;
+                    int _balasDisparadas = balasDisparadas();
+                    if (balas >= _balasDisparadas)
+                    {
+                        balas -= _balasDisparadas;
+                    }
+                    else
+                    {
+                        _balasDisparadas = balas;
+                        balas -= _balasDisparadas;
+                    }
+
+                    Console.WriteLine($"{this.nombre} del equipo {this.equipo} ha disparado {_balasDisparadas} balas a {jugadorenemigo.nombre} del equipo {jugadorenemigo.equipo}\n");
+
+
+                    switch (jugadorenemigo.evasividad)
+                    {
+
+                        case 1:
+                            // 25 %
+                            if (numr() == 1 || numr() == 2 || numr() == 3)
+                            {
+                                jugadorenemigo.activo = false;
+                                Console.WriteLine("Le ha dado");
+                            }
+                            break;
+                        case 2:
+
+                            // 50%
+                            if (numr() == 1 || numr() == 2)
+                            {
+                                jugadorenemigo.activo = false;
+                                Console.WriteLine("Le ha dado");
+                            }
+                            break;
+                        case 3:
+                            // 75 %
+                            if (numr() == 1)
+                            {
+                                jugadorenemigo.activo = false;
+                                Console.WriteLine("Le ha dado");
+                            }
+                            break;
+                    }
+                    Console.WriteLine();
                 }
                 else
                 {
-                    _balasDisparadas = balas;
-                    balas -= _balasDisparadas;
+                    Console.WriteLine($"{this.nombre} esta descalificado\nNo tiene munición\n");
+                    this.activo = false;
                 }
 
-                Console.WriteLine($"{this.nombre} ha disparado {_balasDisparadas} balas a {jugadorenemigo.nombre}\n");
-
-
-                switch (jugadorenemigo.evasividad)
-                {
-
-                    case 1:
-                        // 25 %
-                        if (numr() == 1 || numr() == 2 || numr() == 3)
-                        {
-                            jugadorenemigo.activo = false;
-                            Console.WriteLine("Le ha dado");
-                        }
-                        break;
-                    case 2:
-
-                        // 50%
-                        if (numr() == 1 || numr() == 2)
-                        {
-                            jugadorenemigo.activo = false;
-                            Console.WriteLine("Le ha dado");
-                        }
-                        break;
-                    case 3:
-                        // 75 %
-                        if (numr() == 1)
-                        {
-                            jugadorenemigo.activo = false;
-                            Console.WriteLine("Le ha dado");
-                        }
-                        break;
-                }
-                Console.WriteLine();
             }
-            else
-            {
-            //    Console.WriteLine("esta descalificado\n");
-                this.activo = false;
-            }
-
         }
-         int numr()
+        int numr()
         {
             Random rnd = new Random();
             return rnd.Next(1, 4);
@@ -106,7 +112,7 @@ namespace Paint_Bool
         int balasDisparadas()
         {
             Random balas = new Random();
-            return balas.Next(1,10);
+            return balas.Next(1, 10);
         }
     }
 }
