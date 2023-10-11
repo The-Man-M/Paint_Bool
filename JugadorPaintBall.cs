@@ -10,7 +10,7 @@ namespace Paint_Bool
     {
         CampoDeBatalla campo;
         public bool activo;
-      public  string equipo;
+        public string equipo;
         int balas;
         int evasividad = 0;
 
@@ -73,7 +73,7 @@ namespace Paint_Bool
                             if (numr() == 1 || numr() == 2 || numr() == 3)
                             {
                                 jugadorenemigo.activo = false;
-                                Console.WriteLine("Le ha dado");
+                                _tru();
                             }
                             break;
                         case 2:
@@ -82,7 +82,7 @@ namespace Paint_Bool
                             if (numr() == 1 || numr() == 2)
                             {
                                 jugadorenemigo.activo = false;
-                                Console.WriteLine("Le ha dado");
+                                _tru();
                             }
                             break;
                         case 3:
@@ -90,17 +90,24 @@ namespace Paint_Bool
                             if (numr() == 1)
                             {
                                 jugadorenemigo.activo = false;
-                                Console.WriteLine("Le ha dado");
+                                _tru();
                             }
                             break;
                     }
-                    Console.WriteLine();
                 }
                 else
                 {
-                    Console.WriteLine($"{this.nombre} esta descalificado\nNo tiene munición\n");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"{this.nombre} del equipo {this.equipo} esta descalificado\nNo tiene munición\n");
                     this.activo = false;
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ResetColor();
                 }
+
+
+            }
+            else
+            {
 
             }
         }
@@ -113,6 +120,20 @@ namespace Paint_Bool
         {
             Random balas = new Random();
             return balas.Next(1, 10);
+        }
+        public void jugadorEliminado()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"El jugador {this.nombre} del equipo {this.equipo} esta descalificado\nestado {this.activo}\n");
+            Console.ResetColor();
+        }
+        void _tru()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+           
+            Console.WriteLine("Le ha dado\n");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

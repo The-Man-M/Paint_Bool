@@ -42,18 +42,31 @@ namespace Paint_Bool
                     pareja.Jugador2.correr();
                     if(ramd()%2==0)
                     {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         pareja.Jugador1.disparar(pareja.Jugador2);
+                        Console.ForegroundColor = ConsoleColor.Green;
                         pareja.Jugador2.disparar(pareja.Jugador1);
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         pareja.Jugador2.disparar(pareja.Jugador1);
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         pareja.Jugador1.disparar(pareja.Jugador2);
                     }
-                    
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine("Jugadores eliminados\n");
+               
+                foreach (var pareja in jugadoresEnPar)
+                {
+                    if(!pareja.Jugador1.activo ) pareja.Jugador1.jugadorEliminado();
+                   
+                    if(!pareja.Jugador2.activo) pareja.Jugador2.jugadorEliminado();
+                }
 
-                } 
-                
+
             }
             TerminarBatalla();
         }
